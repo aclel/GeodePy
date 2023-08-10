@@ -152,7 +152,7 @@ def vincdir(lat1, lon1, azimuth1to2, ell_dist, ellipsoid=grs80):
     azimuth2to1 = degrees(atan2(sin(alpha), -sin(u1)*sin(sigma)
                           + cos(u1)*cos(sigma)*cos(azimuth1to2))) + 180
 
-    return round(lat2, 11), round(lon2, 11), round(azimuth2to1, 9)
+    return lat2, lon2, azimuth2to1
 
 
 def vincinv(lat1, lon1, lat2, lon2, ellipsoid=grs80):
@@ -279,7 +279,7 @@ def vincinv(lat1, lon1, lat2, lon2, ellipsoid=grs80):
     #    azimuth1to2 = 0
     #    azimuth2to1 = 180
 
-    return round(ell_dist, 3), round(azimuth1to2, 9), round(azimuth2to1, 9)
+    return ell_dist, azimuth1to2, azimuth2to1
 
 
 def vincdir_utm(zone1, east1, north1, grid1to2, grid_dist,
